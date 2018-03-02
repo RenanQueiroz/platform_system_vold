@@ -105,6 +105,10 @@ ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
   endif
 endif
 
+ifneq ($(TARGET_REMOVE_SECDISCARD_COMMAND),)
+  vold_cflags += -DREMOVE_SECDISCARD_COMMAND
+endif
+
 include $(CLEAR_VARS)
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
